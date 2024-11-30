@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "actsofabove",
+	"version": "${version}",
+	"name": "Acts of Above",
+	"description": "Welcome to the Acts of Above, the place of the Divine and the damned where they fall when they wake, they live when they follow and they dream when they don't, just like any audience wants.",
+	"authors": [
+		"Arathaine",
+		"Novacol",
+		"ARMURIII",
+		"Grae2016",
+		"HourSlow",
+		"BillyTheNarwhal",
+		"Void"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"discord": "we'll put that later"
+	},
+	"license": "All Rights Reserved.",
+	"icon": "assets/actsofabove/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.arathaine.actsofabove.ActsOfAbove"
+		],
+		"fabric-datagen": [
+			"net.arathaine.actsofabove.ActsOfAboveDataGenerator"
+		]
+	},
+	"mixins": [
+		"actsofabove.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.19.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

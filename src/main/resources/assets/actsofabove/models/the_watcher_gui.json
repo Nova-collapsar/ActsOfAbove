@@ -1,0 +1,9 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "actsofabove:item/the_watcher_gui"
+  },
+  "gui_light": "front",
+  "display": {}
+}
