@@ -11,6 +11,18 @@ base {
 }
 
 repositories {
+	maven {
+		description = "Maven for ModMenu and EMI"
+		url = "https://maven.terraformersmc.com/releases/"
+	}
+	maven {
+		name = "willBlRepositoryReleases"
+		url = "https://maven.willbl.dev/releases"
+	}
+	maven {
+		description = "Maven for Mixin Extras"
+		url = "https://jitpack.io"
+	}
 	// Add repositories to retrieve artifacts from in here.
 	// You should only use this when depending on other mods because
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -30,6 +42,7 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.0-beta.4")))
 	
 }
 
@@ -69,6 +82,8 @@ publishing {
 			from components.java
 		}
 	}
+
+
 
 	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
 	repositories {

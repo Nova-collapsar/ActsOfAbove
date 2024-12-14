@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "e": {
+      "item": "minecraft:ender_eye"
+    },
+    "g": {
+      "item": "minecraft:gold_nugget"
+    },
+    "n": {
+      "item": "minecraft:netherite_scrap"
+    }
+  },
+  "pattern": [
+    " n ",
+    "geg",
+    " g "
+  ],
+  "result": {
+    "item": "actsofabove:eye_of_above"
+  }
+}

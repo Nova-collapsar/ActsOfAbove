@@ -1,0 +1,9 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "actsofabove:item/above_eye"
+	},
+	"gui_light": "front",
+	"display": {}
+}

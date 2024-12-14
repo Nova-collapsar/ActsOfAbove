@@ -1,7 +1,5 @@
 package net.arathaine.actsofabove.mixin.client;
-
-import net.arathaine.actsofabove.item.ModItems;
-import net.arathaine.actsofabove.item.ModItems;
+import net.arathaine.actsofabove.init.AOAItems;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.ItemModels;
 import net.minecraft.client.render.item.ItemRenderer;
@@ -19,19 +17,19 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(ItemRenderer.class)
 public class ItemRendererMixin {
-    @Unique private static final ModelIdentifier THE_WATCHER_GUI = new ModelIdentifier("actsofabove","the_watcher_gui","inventory");
+    @Unique
+    private static final ModelIdentifier THE_WATCHER_GUI = new ModelIdentifier("actsofabove","the_watcher_gui","inventory");
 
     @Shadow
     private @Final ItemModels models;
 
     @ModifyVariable(method = "renderItem", at = @At("HEAD"), argsOnly = true)
-    private BakedModel actsofabove$rendeGuiModels(BakedModel model, ItemStack stack, ModelTransformation.Mode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, BakedModel modelAgain) {
-
+    private BakedModel AOA$renderGuiModels(BakedModel model, ItemStack stack, ModelTransformation.Mode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay, BakedModel modelAgain) {
         boolean inventory =
                 renderMode == ModelTransformation.Mode.GUI;
 
         if (inventory) {
-            if (stack.isOf(ModItems.THE_WATCHER)) {
+            if (stack.isOf(AOAItems.THE_WATCHER)) {
                 return models.getModelManager().getModel(THE_WATCHER_GUI);
             }
         }
