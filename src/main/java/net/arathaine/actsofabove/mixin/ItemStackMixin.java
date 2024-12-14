@@ -66,15 +66,15 @@ public abstract class ItemStackMixin {
         }
     }
 
-    @WrapOperation(method = "getTooltip",at = @At(value = "INVOKE", target = "Lnet/minecraft/text/MutableText;formatted(Lnet/minecraft/util/Formatting;)Lnet/minecraft/text/MutableText;"))
-    public MutableText AOA$getToolTipName(MutableText instance, Formatting formatting, Operation<MutableText> original) {
-        ItemStack that = (ItemStack)(Object)this;
+    @ModifyExpressionValue(method = "getTooltip",at = @At(value = "INVOKE", target = "Lnet/minecraft/text/MutableText;formatted(Lnet/minecraft/util/Formatting;)Lnet/minecraft/text/MutableText;"))
+    public MutableText AOA$getToolTipName(MutableText original) {
         if (getItem() instanceof ColoredNameItem color) {
-            Style style = instance.getStyle();
+            ItemStack that = (ItemStack) (Object) this;
+            Style style = original.getStyle();
             style.withColor(color.getColor(that));
-            return instance.setStyle(style);
+            return original.setStyle(style);
         }
-        return original.call(instance, formatting);
+        return original;
     }
 
 

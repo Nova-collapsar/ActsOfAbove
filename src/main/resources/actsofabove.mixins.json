@@ -3,13 +3,16 @@
   "package": "net.arathaine.actsofabove.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ItemMixin",
-    "ItemStackMixin"
+    "EnderEyeItemMixin",
+    "EndPortalFrameBlockMixin",
+    "ItemStackMixin",
+    "PlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
+    "client.ItemEntityRendererMixin",
     "client.ItemRendererMixin"
   ]
 }

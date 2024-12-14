@@ -1,5 +1,6 @@
 package net.arathaine.actsofabove;
 
+import net.arathaine.actsofabove.datagen.AOALangGenerator;
 import net.arathaine.actsofabove.datagen.AOAModelGenerator;
 import net.arathaine.actsofabove.datagen.AOARecipeGenerator;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -10,5 +11,6 @@ public class ActsOfAboveDataGenerator implements DataGeneratorEntrypoint {
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		fabricDataGenerator.addProvider(AOARecipeGenerator::new);
 		fabricDataGenerator.addProvider(AOAModelGenerator::new);
+		fabricDataGenerator.addProvider(AOALangGenerator::new);
 	}
 }

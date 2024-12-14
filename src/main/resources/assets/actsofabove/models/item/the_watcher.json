@@ -18,12 +18,12 @@
 		},
 		"firstperson_righthand": {
 			"rotation": [0, -90, 45],
-			"translation": [1, 6.75, 0.25],
+			"translation": [1, 8.25, 0.25],
 			"scale": [1.36, 1.36, 0.68]
 		},
 		"firstperson_lefthand": {
 			"rotation": [0, 90, -45],
-			"translation": [1, 6.75, 0.25],
+			"translation": [1, 8.25, 0.25],
 			"scale": [1.36, 1.36, 0.68]
 		},
 		"ground": {
@@ -42,5 +42,13 @@
 			"rotation": [0, 0, 90],
 			"translation": [-2, 2, 0]
 		}
-	}
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"actsofabove:gui": 1
+			},
+			"model": "actsofabove:item/the_watcher_gui"
+		}
+	]
 }
